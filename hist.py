@@ -32,17 +32,12 @@ def return_historic_avgs():
     bond_avgs = hist_avgs_col.find_one({"type": "bonds"})
     inflation_avgs = hist_avgs_col.find_one({"type": "inflation"})
 
-
     del stock_avgs["_id"]
     del bond_avgs["_id"]
     del inflation_avgs["_id"]
 
     historic_averages = {"stocks": stock_avgs, "bonds": bond_avgs, "inflation": inflation_avgs}
     
-    
-
-    print(historic_averages)
-
     return jsonify({"results": historic_averages})
 
 if __name__ == "__main__":
