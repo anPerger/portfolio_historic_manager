@@ -15,14 +15,6 @@ client = MongoClient()
 portfolio_hist_db = client["portfolio_hist"]
 hist_avgs_col = portfolio_hist_db["avgs"]
 
-# bonds = {"type": "bonds", "yield": 0.04, "std": 0.04, "dividend": 0.04}
-# stocks = {"type": "stocks", "yield": 0.1, "std": 0.14, "dividend": 0.01}
-# inflation = {"type": "inflation", "rate": 0.03, "std": 0.02}
-
-# hist_avgs_col.insert_one(bonds)
-# hist_avgs_col.insert_one(stocks)
-# hist_avgs_col.insert_one(inflation)
-
 app = Flask(__name__)
 
 @app.route("/return-historic-avgs", methods=["GET"])
